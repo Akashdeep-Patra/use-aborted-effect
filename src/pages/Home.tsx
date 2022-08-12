@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -6,9 +6,9 @@ const Home = () => {
     <div>
       Home Page
       <div className="column">
-        <button onClick={() => navigate("/first")}>First</button>
-        <button onClick={() => navigate("/seccond")}>Seccond</button>
-        <button onClick={() => navigate("/third")}>Third</button>
+        <button onClick={() => navigate('/first')}>First</button>
+        <button onClick={() => navigate('/second')}>Second</button>
+        <button onClick={() => navigate('/third')}>Third</button>
         <Outlet />
       </div>
     </div>

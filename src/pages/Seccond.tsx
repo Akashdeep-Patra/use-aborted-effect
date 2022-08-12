@@ -1,20 +1,39 @@
-import axios from "axios";
-import useAbortedEffect from "../hooks/useAbortedEffect";
+import axios from 'axios';
+import useAbortedEffect from '../hooks/useAbortedEffect';
 
-const Seccond = () => {
-  useAbortedEffect((_signal, cancelToken) => {
+const Second = () => {
+  //example with axios
+  useAbortedEffect(({ axiosCancelToke }) => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts", { cancelToken })
+      .get('https://jsonplaceholder.typicode.com/posts', {
+        cancelToken: axiosCancelToke
+      })
       .then((data) => {
-        console.log("Seccond API call");
+        console.log('Second API call');
       })
       .catch((e: any) => {
-        if (e.name === "CanceledError") {
-          console.log("Seccond API aborted");
+        if (e.name === 'CanceledError') {
+          console.log('Second API aborted');
         }
       });
   }, []);
-  return <div>Seccond Page</div>;
+
+  //example with fetch
+  useAbortedEffect(({ signal }) => {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      signal
+    })
+      .then((data) => {
+        console.log('Second API call');
+      })
+      .catch((e: any) => {
+        if (e.name === 'CanceledError') {
+          console.log('Second API aborted');
+        }
+      });
+  }, []);
+
+  return <div>Second Page</div>;
 };
 
-export default Seccond;
+export default Second;

@@ -1,16 +1,34 @@
-import axios from "axios";
-import useAbortedEffect from "../hooks/useAbortedEffect";
+import axios from 'axios';
+import useAbortedEffect from '../hooks/useAbortedEffect';
 
 const Third = () => {
-  useAbortedEffect((_signal, cancelToken) => {
+  //example with axios
+  useAbortedEffect(({ axiosCancelToke }) => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts", { cancelToken })
+      .get('https://jsonplaceholder.typicode.com/posts', {
+        cancelToken: axiosCancelToke
+      })
       .then((data) => {
-        console.log("Third API call");
+        console.log('Third API call');
       })
       .catch((e: any) => {
-        if (e.name === "CanceledError") {
-          console.log("Third API aborted");
+        if (e.name === 'CanceledError') {
+          console.log('Third API aborted');
+        }
+      });
+  }, []);
+
+  //example with fetch
+  useAbortedEffect(({ signal }) => {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      signal
+    })
+      .then((data) => {
+        console.log('Third API call');
+      })
+      .catch((e: any) => {
+        if (e.name === 'CanceledError') {
+          console.log('Third API aborted');
         }
       });
   }, []);
