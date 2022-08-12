@@ -25,8 +25,14 @@ const First = () => {
   return (
     <div>
       First Page
-      <button onClick={() => setCount(count + 1)}>Click </button>
-      <span>Count : {count}</span>
+      <div style={{
+          display:'flex',
+          gap:'10px',
+          marginTop:'20px'
+      }}>
+        <button onClick={() => setCount(count + 1)}>Click </button>
+        <span>Count : {count}</span>
+      </div>
     </div>
   );
 };
