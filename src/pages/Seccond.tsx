@@ -3,10 +3,10 @@ import useAbortedEffect from '../hooks/useAbortedEffect';
 
 const Second = () => {
   //example with axios
-  useAbortedEffect(({ axiosCancelToke }) => {
+  useAbortedEffect((signal) => {
     axios
       .get('https://jsonplaceholder.typicode.com/posts', {
-        cancelToken: axiosCancelToke
+        signal
       })
       .then((data) => {
         console.log('Second API call');
@@ -19,7 +19,7 @@ const Second = () => {
   }, []);
 
   //example with fetch
-  useAbortedEffect(({ signal }) => {
+  useAbortedEffect((signal) => {
     fetch('https://jsonplaceholder.typicode.com/posts', {
       signal
     })
