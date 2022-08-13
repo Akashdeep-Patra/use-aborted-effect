@@ -7,10 +7,10 @@ const First = () => {
 
   //example with axios
   useAbortedEffect(
-    ({ axiosCancelToke }) => {
+    (signal) => {
       axios
         .get('https://jsonplaceholder.typicode.com/posts', {
-          cancelToken: axiosCancelToke
+          signal
         })
         .then((data) => {
           console.log('First API call');
@@ -26,7 +26,7 @@ const First = () => {
 
   //example with fetch
   useAbortedEffect(
-    ({ signal }) => {
+    (signal) => {
       fetch('https://jsonplaceholder.typicode.com/posts', {
         signal
       })
