@@ -1,5 +1,5 @@
 import axios from 'axios';
-import useAbortedEffect from '../hooks/useAbortedEffect';
+import { useAbortedEffect } from '../hooks/useAbortedEffect';
 
 const Third = () => {
   //example with axios

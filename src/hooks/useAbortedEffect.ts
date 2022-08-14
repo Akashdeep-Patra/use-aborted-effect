@@ -1,7 +1,7 @@
 import axios, { CancelToken } from 'axios';
 import { useEffect } from 'react';
 
-const useAbortedEffect = (
+export const useAbortedEffect = (
   effect: (signal: AbortSignal) => Function | void,
   dependencies: Array<any>
 ) => {
@@ -18,5 +18,3 @@ const useAbortedEffect = (
     };
   }, [...dependencies]);
 };
-
-export default useAbortedEffect;
