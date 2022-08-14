@@ -1,6 +1,6 @@
 {
-  "name": "useabortedeffect",
-  "version": "1.0.0",
+  "name": "use-aborted-effect",
+  "version": "1.0.1",
   "description": "This sandbox has been generated!",
   "keywords": [],
   "main": "src/index.tsx",
@@ -29,5 +29,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-self:Akashdeep-Patra/use-aborted-effect.git"
+  },
+  "author": "Akashdeep Patra (adeep8961@gmail.com)",
+  "license": "ISC"
 }
