@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export const useAbortedEffect = (
+const useAbortedEffect = (
   effect: (signal: AbortSignal) => Function | void,
   dependencies: Array<any>
 ) => {
@@ -17,3 +17,5 @@ export const useAbortedEffect = (
     };
   }, [...dependencies]);
 };
+
+export default useAbortedEffect;

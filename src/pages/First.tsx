@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { useAbortedEffect } from '../hooks/useAbortedEffect';
+import useAbortedEffect from '../hooks/useAbortedEffect';
 
 const First = () => {
   const [count, setCount] = useState(0);

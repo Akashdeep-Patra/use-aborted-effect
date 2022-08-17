@@ -9,6 +9,8 @@ const Home = () => {
         <button onClick={() => navigate('/first')}>First</button>
         <button onClick={() => navigate('/second')}>Second</button>
         <button onClick={() => navigate('/third')}>Third</button>
+        <button onClick={() => navigate('/fourth')}>Fourth</button>
+
         <Outlet />
       </div>
     </div>
